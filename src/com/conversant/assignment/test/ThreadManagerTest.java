@@ -17,7 +17,7 @@ public class ThreadManagerTest {
     @Before
     public void setUp() {
         StringBuilder dir = new StringBuilder(System.getProperty("user.dir"));
-        dir.append("\\src\\test\\data\\");
+        dir.append("\\src\\test_data\\");
         workingDir = dir.toString();
         (new File(workingDir)).mkdir();
     }
@@ -45,10 +45,12 @@ public class ThreadManagerTest {
     @After
     public void tearDown() {
         ThreadManager.shutDown();
-        File files[] = (new File(workingDir)).listFiles();
+        File file = new File(workingDir);
+        File files[] = (file).listFiles();
         for (File f: files) {
             f.delete();
         }
+        file.delete();
     }
 
 }
