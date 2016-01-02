@@ -25,8 +25,8 @@ public class Child implements Callable<Message> {
     private Status status = Status.FAILURE;
 
     /* workingDir is treated as configurable parameter, so that in unit tests - files can be created in test directory and deleted at the end of the tests.
-       If no unit tests then no need for workingDir configurable parameter as well.
-     */
+    If no unit tests, then this should not be needed.
+    */
     private String workingDir;
     public Child(String workingDir) {
         this.workingDir = workingDir;
